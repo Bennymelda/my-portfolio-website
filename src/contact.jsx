@@ -70,7 +70,7 @@ function Contact() {
     <div className="relative md:px-8 lg:px-8 max-w-full">
       {toast && (
         <div
-          className={`fixed top-5 right-5 px-4 py-3 rounded shadow-lg text-white transition-all duration-300
+          className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-3 rounded shadow-lg text-white transition-all duration-300
           ${toastType === "success" ? "bg-green-600" : ""}
           ${toastType === "error" ? "bg-red-600" : ""}
           ${toastType === "loading" ? "bg-blue-600" : ""}`}
@@ -82,47 +82,47 @@ function Contact() {
       <div className="p-5 mb-5">
         {/* ---------- HEADERS OMITTED FOR BREVITY ---------- */}
         <div className="mb-5 ">
-      <h2 className="text-white text-2xl relative inline-block  font-bold ">Contact Me </h2>
+      <h2 className="text-(--head) text-2xl relative inline-block  font-bold ">Contact Me </h2>
         <span className="after:block  after:content-['']
-                after:w-20  after:h-0.5 after:bg-orange-600 text-center after:mt-1"></span>
+                after:w-20  after:h-0.5 after:bg-(--text-main) text-center after:mt-1"></span>
                 <span className="after:block after:content-['']
-                after:w-12  after:h-0.5 after:bg-orange-600 after:mt-1"></span>
+                after:w-12  after:h-0.5 after:bg-(--text-main) after:mt-1"></span>
                 <span className="after:block  after:content-['']
-                after:w-6 after:h-0.5  after:bg-orange-600 after:mt-1"></span>
+                after:w-6 after:h-0.5  after:bg-(--text-main) after:mt-1"></span>
                
     </div>
     
         <div className="flex flex-col items-center justify-center" >
              <div className="flex flex-col justify-center items-center">
-             <p className="text-orange-600 font-bold text-xl md:tracking-wider lg:tracking-wider">Have You Any Questions?</p>
-            <p className="text-white font-bold text-sm pt-2">I'M AT YOUR SERVICE</p>
+             <p className="text-(--text-main) font-bold text-xl md:tracking-wider lg:tracking-wider">Have You Any Questions?</p>
+            <p className="text-(--head) font-bold text-sm pt-2">I'M AT YOUR SERVICE</p>
              </div>
             <div className="md:grid md:pb-5 md:pt-5 md:grid-cols-2 md:gap-50 lg:grid lg:pb-5
              lg:pt-5 lg:grid-cols-2 lg:gap-50 sm:grid sm:pb-5 sm:pt-5 sm:grid-cols-2 sm:gap-20">  
             <div className="flex flex-col items-center justify-center ">
             <div className="hover:bg-orange-600 hover:rounded-full p-3 mb-0 
             transition-all duration-300">
-            <IoIosCall className="text-orange-600
+            <IoIosCall className="text-(--text-main)
          hover:text-white text-2xl " />
             </div>
                 
-                <p className="text-md font-bold">Call us on</p>
-                <p className="text-gray-200">+234 903 488 1350</p>
+                <p className="text-md font-bold text-(--head)">Call us on</p>
+                <p className="text-(--gray)">+234 903 488 1350</p>
             </div>
             <div className="flex flex-col items-center justify-center " >
             <div className="hover:bg-orange-600 hover:rounded-full p-3 mb-0 
             transition-all duration-300">
-             <MdEmail className="text-orange-600
+             <MdEmail className="text-(--text-main)
          hover:text-white text-2xl " />
             </div>
                
-                <p className="text-md font-bold">Email</p>
-                <p className="text-gray-200  ">benedicta45@gmail.com</p>
+                <p className="text-md font-bold text-(--head)">Email</p>
+                <p className="text-(--gray) ">benedicta45@gmail.com</p>
             </div>
         </div>
         </div>
         <div className="flex flex-col gap-3">
-          <h2 className="text-orange-600 font-bold text-xl text-center mt-6">
+          <h2 className="text-(--text-main) font-bold text-xl text-center mt-6">
             SEND ME AN EMAIL
           </h2>
           <p className="text-white font-bold text-sm text-center mb-5 mt-2">
@@ -138,7 +138,8 @@ function Contact() {
               value={formData.user_name}
               onChange={handleClick}
               placeholder="Name"
-              className="bg-zinc-800 pl-5 w-full rounded-2xl p-1.5 outline-0 border-2 border-zinc-700"
+              className="bg-(--back) shadow-[2px_5px_10px_var(--card-bg)] 
+               pl-5 w-full rounded-2xl p-1.5 outline-0 border-2 text-(--head) border-(--input)"
               required
             />
 
@@ -148,7 +149,8 @@ function Contact() {
               value={formData.user_email}
               onChange={handleClick}
               placeholder="Email"
-              className="w-full outline-0 border-2 border-zinc-700 bg-zinc-800 pl-5 rounded-2xl p-1.5"
+              className="w-full outline-0 text-(--head) shadow-[2px_5px_10px_var(--card-bg)] 
+               border-2 border-(--input) bg-(--back) pl-5 rounded-2xl p-1.5"
               required
             />
             </div>
@@ -158,7 +160,8 @@ function Contact() {
               value={formData.subject}
               onChange={handleClick}
               placeholder="Subject"
-              className="w-full outline-0 border-2 border-zinc-700 bg-zinc-800 pl-5 rounded-2xl p-1.5"
+              className="w-full outline-0 border-2 bg-(--back) text-(--head) shadow-[2px_5px_10px_var(--card-bg)] 
+              border-(--input) pl-5 rounded-2xl p-1.5"
               required
             />
 
@@ -167,13 +170,14 @@ function Contact() {
               value={formData.message}
               onChange={handleClick}
               placeholder="Message"
-              className="bg-zinc-800 h-30 w-full rounded-2xl p-3 outline-0 border-2 border-zinc-700"
+              className=" h-30 w-full rounded-2xl p-3 outline-0 bg-(--back) text-(--head) shadow-[2px_5px_10px_var(--card-bg)]  border-2 border-(--input)"
               required
             ></textarea>
 
             <button
               type="submit"
-              className="bg-orange-600 text-white font-bold rounded-3xl w-50 p-2 hover:bg-white hover:text-orange-600 transition-all duration-300 ease-in-out"
+              className="bg-(--text-main) text-white font-bold  rounded-3xl w-50 p-2 hover:bg-white
+               hover:text-(--text-main) transition-all duration-300 ease-in-out"
             >
               Send Message
             </button>

@@ -1,8 +1,61 @@
-/* ...existing code... */
-
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 @import "tailwindcss";
 
-/* ...existing code... */
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  html, body {
+    min-height: 100%;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    font-family: "Josefin Sans", sans-serif;
+  }
+}
 
+/* Theme Variables */
+/* Light Mode */
+/* Light Mode Variables */
+:root {
+  --bg-main: white;   
+  --head:rgb(26, 25, 25);     /* light background */
+  --text-main: #9D00FF;   /* dark text */
+  --card-bg: rgba(0,0,0,0.2);  
+  --gray:rgb(58, 56, 56); /* card background */
+  --accent:rgb(26, 25, 25) ; 
+  --length:  #9D00FF; 
+  --bar:rgb(231, 222, 222);  
+  --background: #ffff; /* accent color */
+  --shadow:rgba(255,255,255,0.7);
+  --show:#9D00FF;
+  --ann:white;
+  --input:rgb(236, 231, 231);
+  --back: #ffff;
+  --orange:#9D00FF;
+  --oran:#a12de9;
+  --bars:rgb(255, 250, 250);
+}
 
+/* Dark Mode Variables */
+html.dark {
+  --bg-main: rgb(2, 2, 2); 
+  --head:white;     /* dark background */
+  --gray:#E5E7EB;
+  --text-main: #ea580c;    /* light text */
+  --card-bg: #18181B;      /* dark card background */
+  --accent:  #ea580c; 
+  --background:#18181B;
+  --length: white; 
+  --show:white;
+  --back:#27272A;
+  --bar:#27272A;    
+  --shadow: #18181B;
+  --orange:#f97316;
+  --oran:#ea580c; 
+  --input:#3f3f46;
+  --bars:#27272A;
+  --ann:#C2410C; /* accent color for dark mode */
+}
