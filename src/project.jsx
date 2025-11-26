@@ -1,4 +1,5 @@
 import './index.css';
+import { useState } from 'react';
 
 function Project() {
   const projects = [
@@ -32,6 +33,13 @@ function Project() {
     }
   ];
 
+  // State to track which overlays are active on mobile
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const toggleOverlay = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   return (
     <div className="bg-(--bg-main) px-5 mb-20 lg:mx-8">
       {/* Header */}
@@ -52,22 +60,37 @@ function Project() {
         {projects.map((project, index) => (
           <div key={index} className="flex flex-col">
             {/* Card with hover overlay */}
-            <div className="relative rounded-lg overflow-hidden bg-(--background) shadow-[2px_8px_25px_var(--card-bg)] group">
+            <div
+              className="relative rounded-lg overflow-hidden bg-(--background) shadow-[2px_8px_25px_var(--card-bg)] group"
+              onClick={() => toggleOverlay(index)} // mobile click
+            >
               <img src={project.img} alt={project.title} className="w-full rounded-lg" />
 
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center gap-4 bg-black bg-opacity-50 opacity-0 group-hover:opacity-70 transition-opacity duration-300 rounded-lg">
+              {/* Hover / Click Overlay */}
+              <div
+                className={`absolute inset-0 flex items-center justify-center gap-4
+                  bg-black bg-opacity-50 opacity-0
+                  group-hover:opacity-70
+                  ${activeIndex === index ? 'opacity-70' : ''}
+                  transition-opacity duration-300 rounded-lg`}
+              >
                 <button
-                  onClick={() => window.open(project.demo, "_blank")}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open(project.demo, "_blank");
+                  }}
                   className="bg-white text-(--text-main) font-bold px-3 py-1 rounded-lg
-                  hover:bg-(--text-main) hover:text-white transition-all duration-300 ease-in-out hover:scale-105"
+                    hover:bg-(--text-main) hover:text-white transition-all duration-300 ease-in-out hover:scale-105"
                 >
                   Demo
                 </button>
                 <button
-                  onClick={() => window.open(project.code, "_blank")}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open(project.code, "_blank");
+                  }}
                   className="bg-white text-(--text-main) font-bold px-3 py-1 rounded-lg
-                  hover:bg-(--text-main) hover:text-white transition-all duration-300 ease-in-out hover:scale-105"
+                    hover:bg-(--text-main) hover:text-white transition-all duration-300 ease-in-out hover:scale-105"
                 >
                   Code
                 </button>
