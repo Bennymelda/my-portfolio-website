@@ -8,7 +8,7 @@ md:flex-row-reverse items-center md:justify-center gap-3' >
         <h2 className='text-(--head) font-bold text-2xl'>Hello, my name is</h2>
         <span className='text-(--text-main) font-cursive mb-2'>𝓘𝓫𝓮𝓼𝓲 𝓑𝓮𝓷𝓮𝓭𝓲𝓬𝓽𝓪</span>
     </div>
-    <div className=' md:flex md:w-[50] md:mx-auto md:my-0'>
+    <div className=' md:flex md:w-[70%] md:mx-auto md:my-0'>
         <img src="/images/prof2.png" alt="" />
     </div>
 
