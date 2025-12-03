@@ -8,28 +8,36 @@ function Project() {
       img: "/images/Screenshot 2025-11-16 072838.png",
       demo: "https://frontend-recipe-iwsw.onrender.com",
       code: "https://github.com/Bennymelda/frontend-recipe",
-      technologies: ["React", "CSS"]
+      technologies: ["React", "CSS"],
+      project:'Recipe Finder',
+      desc:'A responsive multipage webite that allows users search and filter recipe, view details and interact with dynamic content. Users can search for meals filter recipe by max or prep time and explore different dishes dynamically.'
     },
     {
       title: "E-commerce Dessert",
       img: "/images/cart.png",
       demo: "https://bennymelda.github.io/e-commerce-dessert-/",
       code: "https://github.com/Bennymelda/e-commerce-dessert-",
-      technologies: ["Javascript", "CSS"]
+      technologies: ["Javascript", "CSS"],
+      project:"E-commerce Website",
+      desc:' This platform features a responsive design for seamless use a  cross devices. I implemented dynamic product listings, a shooping cart system snd a smooth navigation to enhance the online shopping experience '
     },
     {
       title: "Earth Challenge",
       img: "/images/earth.png",
       demo: "https://bennymelda.github.io/frontend-mentor-earth-challenge/work.html",
       code: "https://github.com/Bennymelda/frontend-mentor-earth-challenge",
-      technologies: ["Javascript", "CSS"]
+      technologies: ["Javascript", "CSS"],
+      project:'Space Tourism',
+      desc:'A multi-page space tourism website featuring destination like Earth, Moon, and Mras e.t.c. This site includes interactive tab navigation, dynamic content powered by javascript and a fully responsive design that work seamlessly on all device.'
     },
     {
       title: "Bookmark Challenge",
       img: "/images/bookmaerk.png",
       demo: "https://bennymelda.github.io/frontend-mentor-intermediate-bookmark-challenge-main/",
       code: "https://github.com/Bennymelda/frontend-mentor-intermediate-bookmark-challenge-main",
-      technologies: ["Javascript", "CSS"]
+      technologies: ["Javascript", "CSS"],
+      project:'Bookmark Landing Page',
+      desc:'This project features tabbed section to showcase different content areas, an FAQ accordion for smooth user      navigation, and client-side form validation to ensureproper email input. Also a sign in form and login form to get users informaton.'
     }
   ];
 
@@ -53,15 +61,18 @@ function Project() {
           after:bg-(--text-main) after:mt-1"></span>
       </div>
 
-      <h2 className="text-2xl pb-5 font-bold">Major Projects I Have Worked On</h2>
+      <h2 className="text-2xl  font-bold">Major Projects I Have Worked On</h2>
 
       {/* Projects Grid */}
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
         {projects.map((project, index) => (
           <div key={index} className="flex flex-col">
             {/* Card with hover overlay */}
+            <h2 className="text-(--head) text-2xl font-bold">{project.project}</h2>
+            <p className="text-(--head) mb-2">{project.desc}</p>
             <div
-              className="relative rounded-lg overflow-hidden bg-(--background) shadow-[2px_8px_25px_var(--card-bg)] group"
+              className="relative rounded-lg overflow-hidden bg-(--background)
+               shadow-[2px_8px_25px_var(--card-bg)] group"
               onClick={() => toggleOverlay(index)} // mobile click
             >
               <img src={project.img} alt={project.title} className="w-full rounded-lg" />
